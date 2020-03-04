@@ -12,6 +12,7 @@
   <modules>
     <module>project-eureka</module>
     <module>project-config</module>
+    <module>project-monitor</module>
   </modules>
 
   <name>project-cloud</name>
