@@ -16,9 +16,9 @@ import java.security.cert.X509Certificate;
  * @author KyrieCao
  * @date 2020/3/5 22:25
  */
-public class HttpUtils
+public class HttpUtil
 {
-    private static final Logger log = LoggerFactory.getLogger(HttpUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(HttpUtil.class);
 
     /**
      * 向指定 URL 发送GET方法的请求

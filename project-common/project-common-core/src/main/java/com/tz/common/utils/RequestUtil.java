@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author Caesar Liu
  * @date 2018/10/10 00:41
  */
-public class RequestUtils {
+public class RequestUtil {
 
     /**
      * 获取系统信息
