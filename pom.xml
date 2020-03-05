@@ -13,14 +13,23 @@
     <module>project-eureka</module>
     <module>project-config</module>
     <module>project-monitor</module>
+    <module>project-common</module>
   </modules>
 
   <name>project-cloud</name>
 
   <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
     <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
+    <fastjson.version>1.2.25</fastjson.version>
+    <jedis.version>2.9.0</jedis.version>
+    <swagger.version>2.9.2</swagger.version>
+    <swagger.bootstrap-ui.version>1.9.3</swagger.bootstrap-ui.version>
   </properties>
 
   <!-- 依赖声明 -->
@@ -51,6 +60,32 @@
         <version>${spring-boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+
+      <!-- fastjson -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+
+      <!-- Redis-Jedis -->
+      <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>${jedis.version}</version>
+      </dependency>
+
+      <!-- Swagger -->
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${swagger.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>swagger-bootstrap-ui</artifactId>
+        <version>${swagger.bootstrap-ui.version}</version>
       </dependency>
 
     </dependencies>
