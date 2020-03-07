@@ -14,7 +14,6 @@
     <module>project-config</module>
     <module>project-monitor</module>
     <module>project-common</module>
-    <module>project-common-redis</module>
   </modules>
 
   <name>project-cloud</name>
