@@ -30,7 +30,7 @@
     <fastjson.version>1.2.49</fastjson.version>
     <jedis.version>2.9.0</jedis.version>
     <swagger.version>2.9.2</swagger.version>
-    <swagger.bootstrap-ui.version>1.9.3</swagger.bootstrap-ui.version>
+    <swagger-ui.version>1.9.5</swagger-ui.version>
   </properties>
 
   <!-- 依赖声明 -->
@@ -86,7 +86,7 @@
       <dependency>
         <groupId>com.github.xiaoymin</groupId>
         <artifactId>swagger-bootstrap-ui</artifactId>
-        <version>${swagger.bootstrap-ui.version}</version>
+        <version>${swagger-ui.version}</version>
       </dependency>
       <dependency>
         <groupId>io.springfox</groupId>
