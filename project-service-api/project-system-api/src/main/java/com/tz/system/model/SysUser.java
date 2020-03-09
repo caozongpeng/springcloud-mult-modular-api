@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 用户实体类
+ * 用户表实体类
  *
  * @author KyrieCao
  * @date 2020/3/9 22:07
