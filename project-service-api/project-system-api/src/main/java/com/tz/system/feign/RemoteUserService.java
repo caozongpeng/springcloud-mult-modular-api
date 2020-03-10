@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
- * 用户 Feign服务层
+ * 用户Feign服务层
  * @author KyrieCao
  * @date 2020/3/10 21:51
  */

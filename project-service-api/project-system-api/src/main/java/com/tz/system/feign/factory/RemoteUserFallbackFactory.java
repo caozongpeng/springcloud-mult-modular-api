@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
- * 用户 服务层工厂
+ * 用户服务层工厂
  * @author KyrieCao
  * @date 2020/3/10 21:53
  */
