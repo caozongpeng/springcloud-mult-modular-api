@@ -1,8 +1,11 @@
 package com.tz.auth.service.impl;
 
 import com.tz.auth.service.SysLoginService;
+import com.tz.common.exception.BusinessException;
+import com.tz.common.utils.MessageUtil;
 import com.tz.system.feign.RemoteUserService;
 import com.tz.system.model.SysUser;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +22,18 @@ public class SysLoginServiceImpl implements SysLoginService {
     @Autowired
     private RemoteUserService remoteUserService;
 
-
     @Override
     public SysUser login(String username, String password) {
+        if (StringUtils.isAnyBlank(username, password)) {
+            // 写入日志 todo
+            throw new BusinessException(MessageUtil.message("user.not.exists"));
+        }
+
+
+
+
+
+
 
 
         return null;
