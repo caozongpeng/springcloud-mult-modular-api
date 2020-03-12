@@ -4,9 +4,12 @@ import com.tz.auth.service.SysLoginService;
 import com.tz.common.constants.UserConstants;
 import com.tz.common.enums.UserStatus;
 import com.tz.common.exception.BusinessException;
+import com.tz.common.utils.IpUtil;
 import com.tz.common.utils.MessageUtil;
+import com.tz.common.utils.ServletUtil;
 import com.tz.system.feign.RemoteUserService;
 import com.tz.system.model.SysUser;
+import com.tz.system.utils.PasswordUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,22 +67,29 @@ public class SysLoginServiceImpl implements SysLoginService {
             throw new BusinessException(MessageUtil.message("user.blocked"));
         }
 
+        // 密码比较
+        if (!PasswordUtil.matches(user, password)) {
+            throw new BusinessException(MessageUtil.message("user.password.not.match"));
+        }
+
+        // 写入日志 todo
+
+        // 记录登录信息
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return null;
+        return user;
     }
+
+    @Override
+    public void recordLoginInfo(SysUser user) {
+        user.setLoginIp(IpUtil.getIpAddress(ServletUtil.getRequest()));
+
+    }
+
+    @Override
+    public void logout(String loginName) {
+
+    }
+
+
 }
