@@ -2,6 +2,7 @@ package com.tz.auth.service.impl;
 
 import com.tz.auth.service.SysLoginService;
 import com.tz.common.constants.UserConstants;
+import com.tz.common.enums.UserStatus;
 import com.tz.common.exception.BusinessException;
 import com.tz.common.utils.MessageUtil;
 import com.tz.system.feign.RemoteUserService;
@@ -45,12 +46,27 @@ public class SysLoginServiceImpl implements SysLoginService {
         // 查询用户信息
         SysUser user = userService.selectSysUserByUsername(username);
 
+        // 判断用户是否存在
         if (null == user) {
             // 写入日志 todo
             throw new BusinessException(MessageUtil.message("user.not.exists"));
         }
 
-//        if ()
+        // 判断用户是否被删除
+        if (UserStatus.DELETED.getCode().equals(user.getDelFlag())) {
+            // 写入日志 todo
+            throw new BusinessException(MessageUtil.message("user.username.delete"));
+        }
+
+        // 判断用户是否停用
+        if (UserStatus.DISABLE.getCode().equals(user.getStatus())) {
+            // 写入日志 todo
+            throw new BusinessException(MessageUtil.message("user.blocked"));
+        }
+
+
+
+
 
 
 
