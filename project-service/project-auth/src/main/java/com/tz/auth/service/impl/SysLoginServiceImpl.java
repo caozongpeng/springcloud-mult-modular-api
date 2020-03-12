@@ -1,6 +1,7 @@
 package com.tz.auth.service.impl;
 
 import com.tz.auth.service.SysLoginService;
+import com.tz.common.constants.UserConstants;
 import com.tz.common.exception.BusinessException;
 import com.tz.common.utils.MessageUtil;
 import com.tz.system.feign.RemoteUserService;
@@ -20,7 +21,7 @@ import org.springframework.stereotype.Service;
 public class SysLoginServiceImpl implements SysLoginService {
 
     @Autowired
-    private RemoteUserService remoteUserService;
+    private RemoteUserService userService;
 
     @Override
     public SysUser login(String username, String password) {
@@ -28,6 +29,33 @@ public class SysLoginServiceImpl implements SysLoginService {
             // 写入日志 todo
             throw new BusinessException(MessageUtil.message("user.not.exists"));
         }
+
+        // 密码如果不丰指定范围内 错误
+        if (password.length() < UserConstants.PASSWORD_MIN_LENGTH || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
+            // 写入日志 todo
+            throw new BusinessException(MessageUtil.message("user.password.not.match"));
+        }
+
+        // 用户名不在指定范围内 错误
+        if (username.length() < UserConstants.USERNAME_MIN_LENGTH || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
+            // 写入日志 todo
+            throw new BusinessException(MessageUtil.message("user.password.not.match"));
+        }
+
+        // 查询用户信息
+        SysUser user = userService.selectSysUserByUsername(username);
+
+        if (null == user) {
+            // 写入日志 todo
+            throw new BusinessException(MessageUtil.message("user.not.exists"));
+        }
+
+//        if ()
+
+
+
+
+
 
 
 
