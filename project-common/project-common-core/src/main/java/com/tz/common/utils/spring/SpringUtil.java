@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/3/12 21:26
  */
 @Component
-public class SpringUtils implements BeanFactoryPostProcessor {
+public class SpringUtil implements BeanFactoryPostProcessor {
 
     /**
      * Spring应用上下文环境
@@ -21,7 +21,7 @@ public class SpringUtils implements BeanFactoryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        SpringUtils.beanFactory = beanFactory;
+        SpringUtil.beanFactory = beanFactory;
     }
 
     /**

@@ -1,6 +1,6 @@
 package com.tz.common.utils;
 
-import com.tz.common.utils.spring.SpringUtils;
+import com.tz.common.utils.spring.SpringUtil;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 
@@ -22,7 +22,7 @@ public class MessageUtil {
      * @date 2020/3/12 21:29
      */
     public static String message(String code, Object... args) {
-        MessageSource messageSource = SpringUtils.getBean(MessageSource.class);
+        MessageSource messageSource = SpringUtil.getBean(MessageSource.class);
         return messageSource.getMessage(code, args, LocaleContextHolder.getLocale());
     }
 
