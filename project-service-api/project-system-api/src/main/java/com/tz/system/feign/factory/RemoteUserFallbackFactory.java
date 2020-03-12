@@ -1,5 +1,6 @@
 package com.tz.system.feign.factory;
 
+import com.tz.common.model.ApiResponse;
 import com.tz.system.feign.RemoteUserService;
 import com.tz.system.model.SysUser;
 import feign.hystrix.FallbackFactory;
@@ -18,6 +19,11 @@ public class RemoteUserFallbackFactory implements FallbackFactory<RemoteUserServ
     public RemoteUserService create(Throwable throwable) {
         log.error(throwable.getMessage());
         return new RemoteUserService() {
+            @Override
+            public ApiResponse<?> updateUserLoginRecord(SysUser user) {
+                return new ApiResponse<>().error();
+            }
+
             @Override
             public SysUser selectSysUserByUsername(String username) {
                 return null;

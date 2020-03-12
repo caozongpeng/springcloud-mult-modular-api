@@ -14,6 +14,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * 系统登录服务层接口实现
  *
@@ -74,8 +76,8 @@ public class SysLoginServiceImpl implements SysLoginService {
 
         // 写入日志 todo
 
-        // 记录登录信息
-
+        // 记录用户登录信息
+        recordLoginInfo(user);
 
         return user;
     }
@@ -83,13 +85,12 @@ public class SysLoginServiceImpl implements SysLoginService {
     @Override
     public void recordLoginInfo(SysUser user) {
         user.setLoginIp(IpUtil.getIpAddress(ServletUtil.getRequest()));
-
+        user.setLoginDate(new Date());
+        userService.updateUserLoginRecord(user);
     }
 
     @Override
     public void logout(String loginName) {
-
+        // 写入 日志 todo
     }
-
-
 }
