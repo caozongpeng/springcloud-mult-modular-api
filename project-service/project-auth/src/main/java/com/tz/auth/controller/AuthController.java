@@ -61,12 +61,13 @@ public class AuthController {
     @PostMapping("/logout")
     public ApiResponse<?> logout(HttpServletRequest request) {
         String token = request.getHeader("token");
-//        SysUser user = accessTokenService.queryByToken(token);
-//        if (null != user) {
-//            sysLoginService.logout(user.getLoginName());
-//            tokenService.expireToken(user.getUserId());
-//        }
-//        return R.ok();
+        // 查询用户
+        SysUser user = accessTokenService.queryByToken(token);
+        if (null != user) {
+            sysLoginService.logout(user.getLoginName());
+            accessTokenService.expireToken(user.getUserId());
+        }
+        return new ApiResponse<>().success();
     }
 
 }

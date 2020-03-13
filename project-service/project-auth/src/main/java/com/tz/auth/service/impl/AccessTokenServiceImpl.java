@@ -6,6 +6,7 @@ import com.tz.common.constants.Constants;
 import com.tz.common.redis.utils.RedisUtil;
 import com.tz.common.utils.RandomUtil;
 import com.tz.system.model.SysUser;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,21 @@ public class AccessTokenServiceImpl implements AccessTokenService {
      * 12小时后过期
      */
     private final static long EXPIRE = 12 * 60 * 60;
+
+    @Override
+    public void expireToken(long userId) {
+        String token = redisUtil.get(Constants.ACCESS_USER_ID + userId);
+        // 从redis中删除token
+        if (StringUtils.isNotBlank(token)) {
+            redisUtil.delete(Constants.ACCESS_USER_ID + userId);
+            redisUtil.delete(Constants.ACCESS_TOKEN);
+        }
+    }
+
+    @Override
+    public SysUser queryByToken(String token) {
+        return redisUtil.get(Constants.ACCESS_TOKEN + token, SysUser.class);
+    }
 
     @Override
     public TokenResp createToken(SysUser sysUser) {
