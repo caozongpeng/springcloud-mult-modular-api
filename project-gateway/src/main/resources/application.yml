@@ -22,6 +22,13 @@ spring:
           locator:
             enabled: true
         routes:
+          # 认证中心
+          - id: project-auth
+            uri: lb://project-auth
+            predicates:
+              - Path=/auth/**
+            filters:
+              - StripPrefix=1
 
 eureka:
   client: #客户端注册进eureka服务列表内
