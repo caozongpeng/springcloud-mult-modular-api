@@ -1,4 +1,4 @@
-package com.tz.system;
+package com.tz;
 
 import com.tz.system.annotation.EnableRyFeignClients;
 import org.springframework.boot.SpringApplication;

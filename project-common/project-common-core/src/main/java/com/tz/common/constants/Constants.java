@@ -80,6 +80,16 @@ public class Constants {
     public static final String RESOURCE_PREFIX  = "/profile";
 
     /**
+     * 服务名常量
+     * @author KyrieCao
+     * @date 2020/3/16 16:37
+     */
+    public interface ServiceNameConstants {
+        String SYSTEM_SERVICE = "project-system"; //system模块
+        String AUTH_SERVICE = "project-auth"; //auth模块
+    }
+
+    /**
      * 日志类型
      * @author KyrieCao
      * @date 2020/2/16 21:57

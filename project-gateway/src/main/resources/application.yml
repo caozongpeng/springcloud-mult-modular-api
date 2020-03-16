@@ -29,6 +29,14 @@ spring:
               - Path=/auth/**
             filters:
               - StripPrefix=1
+          #system 模块
+          - id: project-system
+            uri: lb://project-system
+            predicates:
+              - Path=/system/**
+            filters:
+              # 限流配置
+              - StripPrefix=1
 
 eureka:
   client: #客户端注册进eureka服务列表内

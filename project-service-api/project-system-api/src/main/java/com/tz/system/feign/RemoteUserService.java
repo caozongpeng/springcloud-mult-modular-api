@@ -1,5 +1,6 @@
 package com.tz.system.feign;
 
+import com.tz.common.constants.Constants;
 import com.tz.common.model.ApiResponse;
 import com.tz.system.feign.factory.RemoteUserFallbackFactory;
 import com.tz.system.model.SysUser;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author KyrieCao
  * @date 2020/3/10 21:51
  */
-@FeignClient(name = "project-system", fallbackFactory = RemoteUserFallbackFactory.class)
+@FeignClient(name = Constants.ServiceNameConstants.SYSTEM_SERVICE, fallbackFactory = RemoteUserFallbackFactory.class)
 public interface RemoteUserService {
 
     /**
