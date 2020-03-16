@@ -61,7 +61,7 @@ public class SysUser extends BaseModel {
      * 手机号码
      */
     @Excel(name = "手机号码")
-    private String phoneNumber;
+    private String phonenumber;
 
     /**
      * 用户性别
