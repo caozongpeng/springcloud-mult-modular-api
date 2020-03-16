@@ -27,14 +27,51 @@
       <artifactId>spring-web</artifactId>
     </dependency>
 
+    <!-- pagehelper 分页插件 -->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+    </dependency>
+
     <!-- 工具包 -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
     </dependency>
+
+    <!-- JSON工具类 -->
     <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+
+    <!-- io常用工具类 -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+
+    <!-- 文件上传工具类 -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+    </dependency>
+
+    <!-- HTML解析器 -->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+    </dependency>
+
+    <!-- yml解析器 -->
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>tk.mybatis</groupId>
+      <artifactId>mapper-spring-boot-starter</artifactId>
     </dependency>
 
     <!-- fastjson -->
@@ -75,6 +112,18 @@
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
+    </dependency>
+
+    <!-- 自定义验证注解 -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
     </dependency>
 
   </dependencies>
