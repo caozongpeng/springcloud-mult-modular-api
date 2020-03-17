@@ -34,7 +34,7 @@ public class AccessTokenServiceImpl implements AccessTokenService {
         // 从redis中删除token
         if (StringUtils.isNotBlank(token)) {
             redisUtil.delete(Constants.ACCESS_USER_ID + userId);
-            redisUtil.delete(Constants.ACCESS_TOKEN);
+            redisUtil.delete(Constants.ACCESS_TOKEN + token);
         }
     }
 
