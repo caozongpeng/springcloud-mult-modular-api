@@ -16,6 +16,7 @@
     <module>project-common-core</module>
     <module>project-common-redis</module>
     <module>project-common-swagger</module>
+    <module>project-common-log</module>
   </modules>
 
 

@@ -44,6 +44,7 @@
     <jsoup.version>1.11.3</jsoup.version>
     <poi.version>3.17</poi.version>
     <guava.version>26.0-jre</guava.version>
+    <bitwalker.version>1.19</bitwalker.version>
   </properties>
 
   <!-- 依赖声明 -->
@@ -141,6 +142,12 @@
         <version>${oshi.version}</version>
       </dependency>
 
+      <!-- 解析客户端操作系统、浏览器等 -->
+      <dependency>
+        <groupId>eu.bitwalker</groupId>
+        <artifactId>UserAgentUtils</artifactId>
+        <version>${bitwalker.version}</version>
+      </dependency>
 
       <!--io常用工具类 -->
       <dependency>
