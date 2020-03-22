@@ -1,14 +1,22 @@
 # springcloud的脚手架开发项目，基于restfulAPI
 如果觉得项目可以帮助到你，请帮忙`Star`支持一下
 
+该项目目前只整合了 用户 权限认证、以及 日志管理等功能，因为只做为是个项目开发脚手架。
+
 ### 项目整合
 * JDK1.8
 * springboot2.1.6
 * springcloud(Greenwich.SR2)
+* spring-cloud-eureka
+* spring-cloud-config
+* spring-cloud-gateway
+* spring-boot-admin(monitor)
 * swagger&swagger-bootstrap-ui
+* redis
 * mysql5.7
 * lombok
 
+### 项目目录结构
 ```
 project-cloud
 |
@@ -47,12 +55,14 @@ project-cloud
 |  ├──project-monitor --监控中心
 
 ```
-
-
 ### 启动顺序
 * EurekaApplication
 * ConfigApplication
 * GatewayApplication
 * SystemApplication
-* AuthApplication
+* AuthApplication(可选)
 * MonitorApplication(可选)
+
+### 项目是参考 `ruoyi-cloud` 编写  
+
+

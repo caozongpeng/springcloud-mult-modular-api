@@ -29,8 +29,8 @@ public class SysOperLogController {
      * 查询操作日志记录
      */
     @GetMapping("get/{operId}")
-    public SysOperLog get(@PathVariable("operId") Long operId) {
-        return sysOperLogService.selectOperLogById(operId);
+    public ApiResponse<SysOperLog> get(@PathVariable("operId") Long operId) {
+        return new ApiResponse<SysOperLog>().success(sysOperLogService.selectOperLogById(operId));
     }
 
     /**
