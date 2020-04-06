@@ -17,6 +17,7 @@
     <module>project-gateway</module>
     <module>project-service-api</module>
     <module>project-service</module>
+    <module>project-common/project-common-auth</module>
   </modules>
 
   <name>project-cloud</name>
